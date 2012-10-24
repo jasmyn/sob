@@ -2,7 +2,6 @@ sob - simple open blog (0.7)
 ============================
 
 by Jasmyn Bianca (jasmynbianca@gmail.com)
-
 Released under GPL version 3 or any later version.
 
 *You have to set your own authentication on /admin or it won't be secure.*
