@@ -104,4 +104,4 @@ Short tags need not be turned on. You need MySQL up and running.
 
 2. **Secure /admin.** *This part isn't really extra.*
 
-3. Tinker, curse, repeat...
+3. Profit!
