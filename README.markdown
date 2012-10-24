@@ -91,7 +91,7 @@ Installation
     ?>
     ```
 
-...but then I like to split things up. Loading classes.php and sob.php is the important bit.
+    ...but then I like to split things up. Loading classes.php and sob.php is the important bit.
 
 9. Style however you need to fit in with your site. /css/sob.css comes pre-loaded with the hooks.
 
