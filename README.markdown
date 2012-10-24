@@ -39,7 +39,7 @@ insert into blog values (
 );
 ```
 
-* Create comment table...
+3. Create comment table...
 
 ```sql
 create table comments (
