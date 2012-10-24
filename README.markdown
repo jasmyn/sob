@@ -62,12 +62,13 @@ ip varchar(64) not null
 
 * Make your page, calling the classes then sob. Here's one I did...
 
+```php
 <?php
 	include 'includes/header.inc';
 
 	include 'includes/nav.inc';
 
-	//classes
+	//load classes
 	include 'blog/includes/classes.php';
 
 	//load SOB
@@ -75,6 +76,7 @@ ip varchar(64) not null
 
 	include 'includes/footer.inc';
 ?>
+```
 
 ...but then I like to split things up. Loading classes.php and sob.php is the important bit.
 
