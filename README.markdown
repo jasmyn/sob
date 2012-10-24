@@ -12,7 +12,6 @@ SOB is designed to be easily stylable to match your current site, and you can po
 Short tags need not be turned on. You need MySQL up and running.
 
 /*Installation*/
-
 > Unpack. If you're reading this you've probably made it this far.
 > Create the main table and give it a test entry...
 
