@@ -15,7 +15,7 @@ Short tags need not be turned on. You need MySQL up and running.
 
 Installation
 ------------
-1. Create the main table and give it a test entry...
+* Create the main table and give it a test entry...
 ```sql
 create table blog (
     id int unsigned not null auto_increment primary key,
@@ -25,16 +25,16 @@ create table blog (
     tags varchar(255)
 );
 ```
-2. Give it a dummy entry so you have something to play with
-    ```sql
-    insert into blog values (
-        '',
-        'Test Title One',
-        'Test Entry One',
-        'now()',
-        ''
-    );
-    ```
+* Give it a dummy entry so you have something to play with
+```sql
+insert into blog values (
+    '',
+    'Test Title One',
+    'Test Entry One',
+    'now()',
+    ''
+);
+```
 
 * Create comment table...
 
