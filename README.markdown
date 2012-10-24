@@ -73,13 +73,13 @@ Short tags need not be turned on. You need MySQL up and running.
 
 ### The sob!
 
-6. Edit /includes/db_vars.inc to contain your actual db connect info.
+1. Edit /includes/db_vars.inc to contain your actual db connect info.
 
-7. Upload everything to your hosting server, leaving the directory/file structure intact.
+2. Upload everything to your hosting server, leaving the directory/file structure intact.
 
 ### The page!
 
-8. Make your page, calling the classes then sob. Here's one I did...
+1. Make your page, calling the classes then sob. Here's one I did...
     ```php
     <?php
         include 'includes/header.inc';
@@ -100,6 +100,8 @@ Short tags need not be turned on. You need MySQL up and running.
 
 ### The extra!
 
-9. Style however you need to fit in with your site. /css/sob.css comes pre-loaded with the hooks.
+1. Style however you need to fit in with your site. /css/sob.css comes pre-loaded with the hooks.
 
-10. Tinker, curse, repeat...
+2. *Secure /admin.* This part isn't really extra.
+
+3. Tinker, curse, repeat...
