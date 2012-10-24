@@ -19,15 +19,15 @@ Installation
 1.Prepare MySql
 
     1. Create the main table and give it a test entry...
-```sql
-create table blog (
-    id int unsigned not null auto_increment primary key,
-    title varchar(255) not null,
-    copy varchar(255) not null,
-    posted datetime not null,
-    tags varchar(255)
-);
-```
+    ```sql
+    create table blog (
+        id int unsigned not null auto_increment primary key,
+        title varchar(255) not null,
+        copy varchar(255) not null,
+        posted datetime not null,
+        tags varchar(255)
+    );
+    ```
 
     2. Give it a dummy entry so you have something to play with...
         ```sql
