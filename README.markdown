@@ -16,7 +16,7 @@ Short tags need not be turned on. You need MySQL up and running.
 Installation
 ------------
 
-1. Create the main table and give it a test entry
+1. Create the main table and give it a test entry...
     ```sql
     create table blog (
         id int unsigned not null auto_increment primary key,
@@ -27,7 +27,7 @@ Installation
     );
     ```
 
-2. Give it a dummy entry so you have something to play with
+2. Give it a dummy entry so you have something to play with...
     ```sql
     insert into blog values (
         '',
@@ -38,65 +38,61 @@ Installation
     );
     ```
 
-* Create comment table...
+3. Create comment table...
+    ```sql
+    create table comments (
+        id int unsigned not null auto_increment primary key,
+        postId int unsigned not null,
+        author varchar(64),
+        copy text not null,
+        ip varchar(64),
+        posted datetime not null
+    );
+    ```
 
-```sql
-create table comments (
-    id int unsigned not null auto_increment primary key,
-    postId int unsigned not null,
-    author varchar(64),
-    copy text not null,
-    ip varchar(64),
-    posted datetime not null
-);
-```
+4. Give it a dummy comment to play with...
+    ```sql
+    insert into comments values (
+        '',
+        1,
+        'Author',
+        'Comment',
+        '192.168.1.1',
+        ''
+    );
+    ```
 
-* Give it a dummy comment to play with
+5. Create banned IP table...
+    ```sql
+    create table banned (
+        id int unsigned not null auto_increment primary key,
+        ip varchar(64) not null
+    );
+    ```
 
-```sql
-insert into comments values (
-    '',
-    1,
-    'Author',
-    'Comment',
-    '192.168.1.1',
-    ''
-);
-```
+6. Edit /includes/db_vars.inc to contain your actual db connect info.
 
-* Create banned IP table...
+7. Up everything, leaving the directory/file structure intact.
 
-```sql
-create table banned (
-    id int unsigned not null auto_increment primary key,
-    ip varchar(64) not null
-);
-```
+8. Make your page, calling the classes then sob. Here's one I did...
+    ```php
+    <?php
+        include 'includes/header.inc';
 
-* Edit /includes/db_vars.inc to contain your actual db connect info.
+        include 'includes/nav.inc';
 
-* Up everything, leaving the file structure intact.
+        //load classes
+        include 'blog/includes/classes.php';
 
-* Make your page, calling the classes then sob. Here's one I did...
+        //load SOB
+        include	'blog/sob/sob.php';
 
-```php
-<?php
-	include 'includes/header.inc';
-
-	include 'includes/nav.inc';
-
-	//load classes
-	include 'blog/includes/classes.php';
-
-	//load SOB
-	include	'blog/sob/sob.php';
-
-	include 'includes/footer.inc';
-?>
-```
+        include 'includes/footer.inc';
+    ?>
+    ```
 
 ...but then I like to split things up. Loading classes.php and sob.php is the important bit.
 
-* Style however you need to fit in with your site. /css/sob.css comes pre-loaded with the hooks.
+9. Style however you need to fit in with your site. /css/sob.css comes pre-loaded with the hooks.
 
-* Tinker, curse, repeat...
+10. Tinker, curse, repeat...
