@@ -17,7 +17,6 @@ Installation
 ------------
 
 1.Prepare MySql
-
     1. Create the main table and give it a test entry...
 
 ```sql
