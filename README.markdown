@@ -1,4 +1,4 @@
-SOB - Simple Open Blog (0.7)
+sob - simple open blog (0.7)
 ============================
 
 by Jasmyn Bianca (jasmynbianca@gmail.com)
@@ -16,65 +16,67 @@ Short tags need not be turned on. You need MySQL up and running.
 Installation
 ------------
 
-1. Create the main table and give it a test entry...
-    ```sql
-    create table blog (
-        id int unsigned not null auto_increment primary key,
-        title varchar(255) not null,
-        copy varchar(255) not null,
-        posted datetime not null,
-        tags varchar(255)
-    );
-    ```
+1.Prepare MySql
 
-2. Give it a dummy entry so you have something to play with...
-    ```sql
-    insert into blog values (
-        '',
-        'Test Title One',
-        'Test Entry One',
-        'now()',
-        ''
-    );
-    ```
+    1. Create the main table and give it a test entry...
+        ```sql
+        create table blog (
+            id int unsigned not null auto_increment primary key,
+            title varchar(255) not null,
+            copy varchar(255) not null,
+            posted datetime not null,
+            tags varchar(255)
+        );
+        ```
 
-3. Create comment table...
-    ```sql
-    create table comments (
-        id int unsigned not null auto_increment primary key,
-        postId int unsigned not null,
-        author varchar(64),
-        copy text not null,
-        ip varchar(64),
-        posted datetime not null
-    );
-    ```
+    2. Give it a dummy entry so you have something to play with...
+        ```sql
+        insert into blog values (
+            '',
+            'Test Title One',
+            'Test Entry One',
+            'now()',
+            ''
+        );
+        ```
 
-4. Give it a dummy comment to play with...
-    ```sql
-    insert into comments values (
-        '',
-        1,
-        'Author',
-        'Comment',
-        '192.168.1.1',
-        ''
-    );
-    ```
+    3. Create comment table...
+        ```sql
+        create table comments (
+            id int unsigned not null auto_increment primary key,
+            postId int unsigned not null,
+            author varchar(64),
+            copy text not null,
+            ip varchar(64),
+            posted datetime not null
+        );
+        ```
 
-5. Create banned IP table...
-    ```sql
-    create table banned (
-        id int unsigned not null auto_increment primary key,
-        ip varchar(64) not null
-    );
-    ```
+    4. Give it a dummy comment to play with...
+        ```sql
+        insert into comments values (
+            '',
+            1,
+            'Author',
+            'Comment',
+            '192.168.1.1',
+            ''
+        );
+        ```
 
-6. Edit /includes/db_vars.inc to contain your actual db connect info.
+    5. Create banned IP table...
+        ```sql
+        create table banned (
+            id int unsigned not null auto_increment primary key,
+            ip varchar(64) not null
+        );
+        ```
 
-7. Up everything, leaving the directory/file structure intact.
+2. Edit /includes/db_vars.inc to contain your actual db connect info.
 
-8. Make your page, calling the classes then sob. Here's one I did...
+3. Upload everything to your hosting server, leaving the directory/file structure intact.
+
+4. Make your page, calling the classes then sob. Here's one I did...
     ```php
     <?php
         include 'includes/header.inc';
@@ -93,6 +95,6 @@ Installation
 
     ...but then I like to split things up. Loading classes.php and sob.php is the important bit.
 
-9. Style however you need to fit in with your site. /css/sob.css comes pre-loaded with the hooks.
+5. Style however you need to fit in with your site. /css/sob.css comes pre-loaded with the hooks.
 
-10. Tinker, curse, repeat...
+6. Tinker, curse, repeat...
