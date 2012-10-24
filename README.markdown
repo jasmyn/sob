@@ -102,6 +102,6 @@ Short tags need not be turned on. You need MySQL up and running.
 
 1. Style however you need to fit in with your site. /css/sob.css comes pre-loaded with the hooks.
 
-2. *Secure /admin.* This part isn't really extra.
+2. **Secure /admin.** This part isn't really extra.
 
 3. Tinker, curse, repeat...
