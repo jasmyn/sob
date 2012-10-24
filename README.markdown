@@ -15,7 +15,7 @@ Short tags need not be turned on. You need MySQL up and running.
 
 ## Installation
 
-### Prepare MySql
+### The MySql!
 
 1. Create the main table and give it a test entry...
     ```sql
@@ -71,7 +71,7 @@ Short tags need not be turned on. You need MySQL up and running.
     );
     ```
 
-### Prepare sob
+### The sob!
 
 6. Edit /includes/db_vars.inc to contain your actual db connect info.
 
