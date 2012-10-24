@@ -6,12 +6,12 @@ Released under GPL version 3 or any later version.
 
 *You have to set your own authentication on /admin or it won't be secure.*
 
-/*SOB?*/
+## SOB?
 I needed a blog to plug into client's sites and all the ones I tried were more than I needed.
 SOB is designed to be easily stylable to match your current site, and you can position the blog div how you like.
 Short tags need not be turned on. You need MySQL up and running.
 
-/*Installation*/
+## Installation
 > Unpack. If you're reading this you've probably made it this far.
 > Create the main table and give it a test entry...
 
