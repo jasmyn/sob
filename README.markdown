@@ -17,6 +17,7 @@ Installation
 ------------
 * Create the main table and give it a test entry...
 
+```sql
 create table blog (
 id int unsigned not null auto_increment primary key,
 title varchar(255) not null,
@@ -24,6 +25,7 @@ copy varchar(255) not null,
 posted datetime not null,
 tags varchar(255)
 );
+```
 
 insert into blog values (
 '',
