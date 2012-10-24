@@ -75,7 +75,7 @@ Short tags need not be turned on. You need MySQL up and running.
 
 6. Edit /includes/db_vars.inc to contain your actual db connect info.
 
-7. Up everything, leaving the directory/file structure intact.
+7. Upload everything to your hosting server, leaving the directory/file structure intact.
 
 ### The page!
 
