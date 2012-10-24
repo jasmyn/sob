@@ -26,6 +26,7 @@ create table blog (
     tags varchar(255)
 );
 ```
+
 * Give it a dummy entry so you have something to play with
 ```sql
 insert into blog values (
