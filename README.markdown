@@ -58,6 +58,7 @@ ip varchar(64) not null
 );
 
 * Edit /includes/db_vars.inc to contain your actual db connect info.
+
 * Up everything, leaving the file structure intact.
 
 * Make your page, calling the classes then sob. Here's one I did...
