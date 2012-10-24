@@ -71,13 +71,13 @@ Short tags need not be turned on. You need MySQL up and running.
     );
     ```
 
-### The blog!
+### The Blog!
 
 1. Edit /includes/db_vars.inc to contain your actual db connect info.
 
 2. Upload everything to your hosting server, leaving the directory/file structure intact.
 
-### The page!
+### The Page!
 
 1. Make your page, calling the classes then sob. Here's one I did...
     ```php
@@ -98,7 +98,7 @@ Short tags need not be turned on. You need MySQL up and running.
 
     ...but then I like to split things up. Loading classes.php and sob.php is the important bit.
 
-### The extra!
+### The Extra!
 
 1. Style however you need to fit in with your site. /css/sob.css comes pre-loaded with the hooks.
 
