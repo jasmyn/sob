@@ -15,6 +15,7 @@ Short tags need not be turned on. You need MySQL up and running.
 
 Installation
 ------------
+
 * Create the main table and give it a test entry
 ```sql
 create table blog (
