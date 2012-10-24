@@ -1,0 +1,57 @@
+h1, h2, h3 {
+	color:#b6b6b6;
+	text-align:center;
+}
+
+#blog {
+
+}
+
+.posted {
+	font-size:75%;
+}
+
+.title {
+	font-size:200%;
+}
+
+.copy {
+
+}
+
+.tags {
+	color:gray;
+	font-size:90%;
+	font-style:italic;
+}
+
+#comments {
+
+}
+
+
+.comment {
+	position:relative;
+	left:225px;
+}
+
+.author {
+	font-size:75%;
+	position:relative;
+	left:225px;
+}
+
+.message {
+	font-weight:bold;
+	padding:10px;
+}
+
+.comment a {
+	color:#b6b6b6;
+	font-size:60%;
+}
+
+form {
+	position:relative;
+	left:225px;
+}
