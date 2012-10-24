@@ -71,7 +71,7 @@ Short tags need not be turned on. You need MySQL up and running.
     );
     ```
 
-### The sob!
+### The blog!
 
 1. Edit /includes/db_vars.inc to contain your actual db connect info.
 
