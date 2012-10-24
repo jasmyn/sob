@@ -19,48 +19,60 @@ Installation
 
 ```sql
 create table blog (
-id int unsigned not null auto_increment primary key,
-title varchar(255) not null,
-copy varchar(255) not null,
-posted datetime not null,
-tags varchar(255)
+    id int unsigned not null auto_increment primary key,
+    title varchar(255) not null,
+    copy varchar(255) not null,
+    posted datetime not null,
+    tags varchar(255)
 );
 ```
 
+* Give it a dummy entry so you have something to play with
+
+```sql
 insert into blog values (
-'',
-'Test Title One',
-'Test Entry One',
-'now()',
-''
+    '',
+    'Test Title One',
+    'Test Entry One',
+    'now()',
+    ''
 );
+```
 
 * Create comment table...
 
+```sql
 create table comments (
-id int unsigned not null auto_increment primary key,
-postId int unsigned not null,
-author varchar(64),
-copy text not null,
-ip varchar(64),
-posted datetime not null
+    id int unsigned not null auto_increment primary key,
+    postId int unsigned not null,
+    author varchar(64),
+    copy text not null,
+    ip varchar(64),
+    posted datetime not null
 );
+```
 
+* Give it a dummy comment to play with
+
+```sql
 insert into comments values (
-'',
-1,
-'Author',
-'Comment',
-'192.168.1.1',
-''
+    '',
+    1,
+    'Author',
+    'Comment',
+    '192.168.1.1',
+    ''
 );
+```
 
 * Create banned IP table...
 
+```sql
 create table banned (
-id int unsigned not null auto_increment primary key,
-ip varchar(64) not null
+    id int unsigned not null auto_increment primary key,
+    ip varchar(64) not null
 );
+```
 
 * Edit /includes/db_vars.inc to contain your actual db connect info.
 
