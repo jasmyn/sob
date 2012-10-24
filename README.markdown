@@ -12,8 +12,7 @@ SOB is designed to be easily stylable to match your current site, and you can po
 Short tags need not be turned on. You need MySQL up and running.
 
 ## Installation
-> Unpack. If you're reading this you've probably made it this far.
-> Create the main table and give it a test entry...
+* Create the main table and give it a test entry...
 
 create table blog (
 id int unsigned not null auto_increment primary key,
@@ -31,7 +30,7 @@ insert into blog values (
 ''
 );
 
-> Create comment table...
+* Create comment table...
 
 create table comments (
 id int unsigned not null auto_increment primary key,
@@ -51,17 +50,17 @@ insert into comments values (
 ''
 );
 
-Create banned IP table...
+* Create banned IP table...
 
 create table banned (
 id int unsigned not null auto_increment primary key,
 ip varchar(64) not null
 );
 
-> Edit /includes/db_vars.inc to contain your actual db connect info.
-> Up everything, leaving the file structure intact.
+* Edit /includes/db_vars.inc to contain your actual db connect info.
+* Up everything, leaving the file structure intact.
 
-> Make your page, calling the classes then sob. Here's one I did...
+* Make your page, calling the classes then sob. Here's one I did...
 
 <?php
 	include 'includes/header.inc';
