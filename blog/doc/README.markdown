@@ -102,6 +102,6 @@ Short tags need not be turned on. You need MySQL up and running.
 
 1. Style however you need to fit in with your site. /css/sob.css comes pre-loaded with the hooks.
 
-2. **Secure /blog.** *This part isn't really extra.* No one needs access to anything in this directory, at least not in a browser, so lock it down!
+2. **Secure /blog.** *This part isn't really extra.* You don't need browser access to anything in this directory, so lock it down!
 
 3. Profit!
