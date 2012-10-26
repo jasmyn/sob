@@ -5,14 +5,14 @@ class Db
     {
         include 'db_vars.inc';
 
-			$db = mysql_connect($host, $dbuser, $dbpass)
-			if (!$db) {
-                die("Cannot connect to mySQL.");
-            }
-			
-			mysql_select_db($dbname, $db)
-                or die("Cannot connect to database.");
-		}
+        $db = mysql_connect($host, $dbuser, $dbpass);
+        if (!$db) {
+            die("Cannot connect to mySQL.");
+        }
+
+        mysql_select_db($dbname, $db)
+            or die("Cannot connect to database.");
+    }
 
     public function sanitize($dirty)
     { //takes an array, must be connected to db
@@ -29,25 +29,16 @@ class Db
 
     public function q($q, $return = 'result')
     {
-
         if ($r = mysql_query($q)) {
-
             $d = mysql_fetch_object($r);
-
             if ($return = 'result') {
-
                 return $d;
-
             } elseif ($return = 'bool') {
-
                 return 1;
-
             }
 
         } else {
-
             return 0;
-
         }
 
     }
