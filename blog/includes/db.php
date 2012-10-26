@@ -1,56 +1,59 @@
 <?php
-	class Db
-	{
-		public function dbConnect() 
-		{
-			include 'db_vars.inc';
+class Db
+{
+    public function dbConnect()
+    {
+        include 'db_vars.inc';
 
 			$db = mysql_connect($host, $dbuser, $dbpass)
-					or die("Cannot connect to mySQL.");
+			if (!$db) {
+                die("Cannot connect to mySQL.");
+            }
+			
 			mysql_select_db($dbname, $db)
-					or die("Cannot connect to database.");
+                or die("Cannot connect to database.");
 		}
 
-		public function sanitize($dirty)
-		{ //takes an array, must be connected to db
-			$clean = array();
+    public function sanitize($dirty)
+    { //takes an array, must be connected to db
+        $clean = array();
 
-			foreach	($dirty as $key => $value) {
+        foreach	($dirty as $key => $value) {
 
-				$clean["$key"] = mysql_real_escape_string($value);
+            $clean["$key"] = mysql_real_escape_string($value);
 
-			}
+        }
 
-			return $clean;
-		}
+        return $clean;
+    }
 
-		public function q($q, $return = 'result')
-		{
+    public function q($q, $return = 'result')
+    {
 
-			if ($r = mysql_query($q)) {
+        if ($r = mysql_query($q)) {
 
-				$d = mysql_fetch_object($r);
+            $d = mysql_fetch_object($r);
 
-				if ($return = 'result') {
+            if ($return = 'result') {
 
-					return $d;
+                return $d;
 
-				} elseif ($return = 'bool') {
+            } elseif ($return = 'bool') {
 
-					return 1; 
+                return 1;
 
-				}
+            }
 
-			} else {
+        } else {
 
-				return 0;
+            return 0;
 
-			}
+        }
 
-		}
+    }
 
-	}
+}
 
-	$db = new Db;
-	$db->dbConnect();
+$db = new Db;
+$db->dbConnect();
 ?>
