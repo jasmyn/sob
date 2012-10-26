@@ -5,7 +5,7 @@ by Jasmyn Bianca (jasmynbianca@gmail.com)
 
 Released under GPL version 3 or any later version.
 
-*You have to set your own authentication on /admin or it won't be secure.*
+*You have to set your own authentication on /blog or it won't be secure.*
 
 #sob?
 
@@ -102,6 +102,6 @@ Short tags need not be turned on. You need MySQL up and running.
 
 1. Style however you need to fit in with your site. /css/sob.css comes pre-loaded with the hooks.
 
-2. **Secure /admin.** *This part isn't really extra.*
+2. **Secure /blog.** *This part isn't really extra.* No one needs access to anything in this directory, at least not in a browser, so lock it down!
 
 3. Profit!
