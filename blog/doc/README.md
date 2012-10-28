@@ -1,11 +1,11 @@
-sob - simple open blog (0.7)
+sob - simple open blog (0.8)
 ============================
 
 by Jasmyn Bianca (jasmynbianca@gmail.com)
 
 Released under GPL version 3 or any later version.
 
-*You have to set your own authentication on /blog or it won't be secure.*
+*You have to set your own authentication on /blog/admin or it won't be secure.*
 
 #sob?
 
@@ -102,6 +102,6 @@ Short tags need not be turned on. You need MySQL up and running.
 
 1. Style however you need to fit in with your site. /css/sob.css comes pre-loaded with the hooks.
 
-2. **Secure /blog.** *This part isn't really extra.* You don't need browser access to anything in this directory, so lock it down!
+2. **Secure /blog/admin.** *This part isn't really extra.* If you don't do this anyone who knows the URLs to the admin pages can edit your blog. The included .htaccess file should block anyone viewing db_vars.inc.
 
 3. Profit!

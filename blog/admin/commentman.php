@@ -1,80 +1,64 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+    <title>SOB::CommentMan</title>
 </head>
 <body>
 <?php
-	//db connect
-	include '../includes/db.php';
+//load classes
+include '../includes/classes.php';
+include 'includes/admin_classes.php';
 
-	$db = new Db;
-	$db->dbConnect();
+//connect to db
+$db = new Db;
+$db->dbConnect();
 
-	echo '<h1>SOB::commentman</h1>';
+echo '<h1>SOB::commentman</h1>';
 
-	//load classes & instantiate object
-	include 'includes/admin_classes.php';
+$commentman = new Commentman;
 
-	$commentman = new Commentman;
+//sanitize & simplify
+if ($_GET) {
+    $cleanGet = array();
+    $cleanGet = $db->sanitize($_GET);
+    extract($cleanGet);
 
-	//sanitize & simplify
-	if ($_GET) {
+}
 
-		$cleanGet = array();
-		$cleanGet = $db->sanitize($_GET);
-		extract($cleanGet);
+if ($_POST) {
+    $cleanPost = array();
+    $cleanPost = $db->sanitize($_POST);
+    extract($cleanPost);
 
-	}
+}
 
-	if ($_POST) {
+//del comment
+if ($del && $id) {
+    $commentman->del($id);
+}
 
-		$cleanPost = array();
-		$cleanPost = $db->sanitize($_POST);
-		extract($cleanPost);
+//display comments
+if ($sortIp) {
+    $order = 'ip';
+} else {
+    $order = 'posted';
+}
 
-	}
+//ban IP
+if ($ban && $ip) {
+    $commentman->ban($ip);
+}
 
-	//del comment
-	if ($del && $id) {
+//unban IP
+if ($unban && $ip) {
+    $commentman->unban($ip);
+}
 
-		$commentman->del($id);
+//display comments
+echo $commentman->display($order);
 
-	}
-
-	//display comments
-	if ($sortIp) {
-
-		$order = 'ip';
-
-	} else {
-
-		$order = 'posted';
-
-	}
-
-	//ban IP
-	if ($ban && $ip) {
-
-		$commentman->ban($ip);
-
-	}
-
-	//unban IP
-	if ($unban && $ip) {
-
-		$commentman->unban($ip);
-
-	}
-
-	//display comments
-	echo $commentman->display($order);
-
-	//order by IP
-	echo "<br />";
-	$commentman->ipSortButton();
-
-	//banned IPs
-	$commentman->banned();
+//banned IPs
+$commentman->banned();
 ?>
 </body>
 </html>

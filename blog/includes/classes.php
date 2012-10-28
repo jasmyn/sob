@@ -29,18 +29,16 @@ class Db
 
     public function q($q, $return = 'result')
     {
-        if ($r = mysql_query($q)) {
-            $d = mysql_fetch_object($r);
-            if ($return = 'result') {
-                return $d;
-            } elseif ($return = 'bool') {
+        if ($r = mysql_query($q) or die ( mysql_errno() + "<br />" + mysql_error() )) {
+            if ($r === true) { //if it's true (statement doesn't return a result set/ resourse (INSERT, UPDATE, DELETE, DROP, etc)) don't try to fetch an object from the resource
                 return 1;
+            } else { //otherwise process the resource (SELECT, SHOW, DESCRIBE, EXPLAIN, etc)
+                $d = mysql_fetch_object($r);
+                return $d;
             }
-
         } else {
             return 0;
         }
-
     }
 
 }
@@ -50,6 +48,7 @@ class Comments
     public function add($id, $copy, $author, $ip)
     {
         $db = new Db;
+        $db->dbConnect();
         $db->q("insert into comments values ('', '$id', '$author', '$copy', '$ip', now())");
     }
 
@@ -124,13 +123,13 @@ class Blog
 
         while ($d = mysql_fetch_object($r)) {
 
-            $blog .= "\t\t<span class='posted'>".$d->posted."</span><br />\n";
-            $blog .= "\t\t<span class='title'>".$d->title."</span><br />\n";
-            $blog .= "\t\t<span class='copy'>".$d->copy."</span><br />\n";
+            $blog .= "\t\t<span class='posted'>".stripslashes($d->posted)."</span><br />\n";
+            $blog .= "\t\t<span class='title'>".stripslashes($d->title)."</span><br />\n";
+            $blog .= "\t\t<span class='copy'>".stripslashes($d->copy)."</span><br />\n";
 
             if ($d->tags) {
 
-                $blog .= "\t\t<span class='tags'>".$d->tags."</span><br />\n";
+                $blog .= "\t\t<span class='tags'>".stripslashes($d->tags)."</span><br />\n";
 
             }
 
@@ -161,13 +160,13 @@ class Blog
 
         while ($d = mysql_fetch_object($r)) {
 
-            $post .= "\t\t<span class='posted'>".$d->posted."</span><br />\n";
-            $post .= "\t\t<span class='title'>".$d->title."</span><br />\n";
-            $post .= "\t\t<span class='copy'>".$d->copy."</span><br />\n";
+            $post .= "\t\t<span class='posted'>".stripslashes($d->posted)."</span><br />\n";
+            $post .= "\t\t<span class='title'>".stripslashes($d->title)."</span><br />\n";
+            $post .= "\t\t<span class='copy'>".stripslashes($d->copy)."</span><br />\n";
 
             if ($d->tags) {
 
-                $post .= "\t\t<span class='tags'>".$d->tags."</span><br />\n";
+                $post .= "\t\t<span class='tags'>".stripslashes($d->tags)."</span><br />\n";
 
             }
 
@@ -184,8 +183,8 @@ class Blog
 
         while ($d = mysql_fetch_object($r)) {
 
-            $post .= "\t\t<span class='author'>Author: ".$d->author."</span><br />\n";
-            $post .= "\t\t<span class='comment'>".$d->copy."</span><br /><br />\n\n";
+            $post .= "\t\t<span class='author'>".stripslashes($d->author)."</span><br />\n";
+            $post .= "\t\t<span class='comment'>".stripslashes($d->copy)."</span><br /><br />\n\n";
 
         }
 

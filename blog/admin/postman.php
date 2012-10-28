@@ -1,84 +1,75 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+    <title>SOB::PostMan</title>
 </head>
 <body>
 <?php
-	//db connect
-	include '../includes/db.php';
+//load classes
+include '../includes/classes.php';
+include 'includes/admin_classes.php';
 
-	$db = new Db;
-	$db->dbConnect();
+//connect to db
+$db = new Db;
+$db->dbConnect();
 
-	echo '<h1>SOB::postman</h1>';
+echo '<h1>SOB::postman</h1>';
 
-	//load class & instantiate object
-	include 'includes/admin_classes.php';
-	$blogman = new Blogman;
+$blogman = new Blogman;
 
-	//sanitize & simplify
-	if ($_GET) {
+//sanitize & simplify
+if ($_GET) {
+    $cleanGet = array();
+    $cleanGet = $db->sanitize($_GET);
+    extract($cleanGet);
+}
 
-		$cleanGet = array();
-		$cleanGet = $db->sanitize($_GET);
-		extract($cleanGet);
+if ($_POST) {
+    $cleanPost = array();
+    $cleanPost = $db->sanitize($_POST);
+    extract($cleanPost);
+}
 
-	}
+//add post
+if ($add && $title && $copy) {
+    if (!$tags) {
+        $tags = '';
+    }
+    $blogman->addPost($title, $copy, $tags);
 
-	if ($_POST) {
+}
 
-		$cleanPost = array();
-		$cleanPost = $db->sanitize($_POST);
-		extract($cleanPost);
+//del post
+if ($del && $id) {
+    $blogman->delPost($id);
+}
 
-	}
+//show edit form
+if ($edit && $id) {
+    $blogman->editForm($id);
+}
 
-	//add post
-	if ($add && $title && $copy) {
-
-
-		if (!$tags) {
-			$tags = '';
-		}
-
-		$blogman->addPost($title, $copy, $tags);
-
-	}
-
-	//del post
-	if ($del && $id) {
-
-		$blogman->delPost($id);
-
-	}
-
-	//show edit form
-	if ($edit && $id) {
-
-		$blogman->editForm($id);
-
-	}
-
-	//submit update
-	if ($editsubmit && $id && $title && $copy) {
-
-		if ($tags) {
-
-			$blogman->editSubmit($id, $title, $copy, $tags);
-
-		} else {
-
-			$blogman->editSubmit($id, $title, $copy);
-
-		}
-	}
+//submit update
+if ($editsubmit && $id && $title && $copy) {
+    if ($tags) {
+        $blogman->editSubmit($id, $title, $copy, $tags);
+    } else {
+        $blogman->editSubmit($id, $title, $copy);
+    }
+}
 
 
-	//display posts
-	echo $blogman->display();
+//display posts
+echo $blogman->display();
 
-	//add post
-	$blogman->inputForm();
+//add post
+$blogman->inputForm();
 ?>
+<script type="text/javascript" src="../../scripts/tiny_mce/tiny_mce.js"></script>
+<script type="text/javascript">
+    tinyMCE.init({
+        mode : "textareas"
+    });
+</script>
 </body>
 </html>

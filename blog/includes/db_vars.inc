@@ -1,6 +1,6 @@
 <?php
-			$host = "";
-			$dbuser = "";
-			$dbpass = "";
-			$dbname = "";
+	$host = "";
+	$dbuser = "";
+	$dbpass = "";
+	$dbname = "";
 ?>
