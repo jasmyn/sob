@@ -22,7 +22,7 @@ Short tags need not be turned on. You need MySQL up and running.
     create table blog (
         id int unsigned not null auto_increment primary key,
         title varchar(255) not null,
-        copy varchar(255) not null,
+        copy text not null,
         posted datetime not null,
         tags varchar(255)
     );
