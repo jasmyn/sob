@@ -1,4 +1,4 @@
-sob - simple open blog (0.8)
+SOB - Simple Open Blog (0.8)
 ============================
 
 by Jasmyn Bianca (jasmynbianca@gmail.com)
@@ -7,7 +7,7 @@ Released under GPL version 3 or any later version.
 
 *You have to set your own authentication on /blog/admin or it won't be secure.*
 
-#sob?
+#SOB?
 
 I needed a blog to plug into client's sites and all the ones I tried were more than I needed.
 SOB is designed to be easily stylable to match your current site, and you can position the blog div how you like.
