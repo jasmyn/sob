@@ -104,4 +104,6 @@ Short tags need not be turned on. You need MySQL up and running.
 
 2. **Secure /blog/admin.** *This part isn't really extra.* If you don't do this anyone who knows the URLs to the admin pages can edit your blog. The included .htaccess file should block anyone viewing db_vars.inc.
 
-3. Profit!
+3. ...
+
+4. Profit!
