@@ -3,15 +3,13 @@ SOB - Simple Open Blog (0.8)
 
 by Jasmyn Bianca (jasmynbianca@gmail.com)
 
-Released under GPL version 3 or any later version.
+Released under MIT License.
 
 *You have to set your own authentication on /blog/admin or it won't be secure.*
 
 #SOB?
 
-I needed a blog to plug into client's sites and all the ones I tried were more than I needed.
-SOB is designed to be easily stylable to match your current site, and you can position the blog div how you like.
-Short tags need not be turned on. You need MySQL up and running.
+I needed a blog to plug into client's sites and all the ones I tried were more than I needed. SOB is an inobtrusive blogging platform you can easily plug in to your existing layout. Comes with a full administrative back-end and all necessary hooks built into the included style sheet. Features IP based comment blocking! Short tags need not be turned on. You need MySQL up and running.
 
 ## Installation
 
